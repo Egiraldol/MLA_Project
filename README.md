@@ -32,35 +32,38 @@ logrando un ROC-AUC superior a 0.85 en el conjunto de prueba?
 
 ```text
 MLA-project/
-├── README.md                  # Punto de entrada del repositorio.
-│                              # Explica el proyecto, cómo reproducirlo
-│                              # y el estado de cada entrega
+├── README.md                        # Punto de entrada del repositorio.
+│                                    # Explica el proyecto, cómo reproducirlo
+│                                    # y el estado de cada entrega
 │
-├── environment.yml            # Entorno reproducible con dependencias
-│                              # necesarias para ejecutar el proyecto
+├── environment.yml                  # Entorno reproducible con dependencias
+│                                    # necesarias para ejecutar el proyecto
 │
 ├── data/
-│   ├── bank-full.csv               # Dataset principal utilizado en el proyecto
-│   └── README.md              # Información sobre el dataset y su origen
+│   └── bank-full.csv                # Dataset principal
 │
 ├── notebooks/
-│   └── eda_baseline.ipynb  # Notebook principal de la Entrega 1:
-│                              # carga de datos, limpieza inicial,
-│                              # EDA, separación train/test y baseline
+│   └── eda_baseline.ipynb.ipynb  # Notebook principal de la Entrega 1:
+│                                    # carga de datos, calidad, EDA,
+│                                    # separación train/test y baselines
 │
-├── figures/                   # Figuras generadas automáticamente
-│   ├── fig1_target_dist.png       # Distribución de la variable objetivo
-│   ├── fig2_features_dist.png     # Distribución de variables numéricas
-│   ├── fig3_correlations.png       # Matriz de correlaciones
-│   └── fig4_map.png       # 
+├── figures/                         # Figuras generadas automáticamente
+│   │                                # por el notebook al ejecutarse
+│   ├── fig1_target_dist.png         # Distribución de la variable objetivo
+│   ├── fig2_numeric_dist.png        # Distribución de variables numéricas
+│   ├── fig3_boxplots_by_class.png   # Variables numéricas por clase objetivo
+│   ├── fig4_categorical_acceptance.png  # Tasa de aceptación por variable categórica
+│   ├── fig5_correlation_matrix.png  # Matriz de correlaciones de Pearson
+│   ├── fig6_confusion_matrix_lr.png # Matriz de confusión — Logistic Regression
+│   └── fig7_baseline_comparison.png # Comparación de métricas entre baselines
 │
 ├── report/
-│   ├── datacard.md            # Descripción estructurada del dataset:
-│   │                          # variables, limitaciones y riesgos
-│   └── reporte_entrega1.pdf   # Reporte técnico completo
+│   ├── datacard.md                  # Descripción estructurada del dataset:
+│   │                                # variables, limitaciones y riesgos
+│   └── report1.pdf         # Reporte técnico completo de la Entrega 1
 │
-└── poster/                    # Vacío por ahora. Contendrá la síntesis visual 
-                               # del proyecto para la Entrega 3
+└── poster/                          # Vacío por ahora. Contendrá la síntesis
+                                     # visual del proyecto para la Entrega 3
 
 ```
 
@@ -111,10 +114,11 @@ Las figuras se guardan automáticamente en figures/
 
 ## Resultados por entrega
 
-### Entrega 1 — Baseline
-| Modelo           | Accuracy   | F1-score   | ROC-AUC |
-|------------------|------------|------------|---------|
-| DummyClassifier  | ~0.88      | 0.00       | 0.50    |
+### Entrega 1 — EDA y Baselines
+| Modelo                           | Accuracy   | F1-score (yes)   | ROC-AUC |
+|----------------------------------|------------|------------------|---------|
+| DummyClassifier (most_frequent)  | ~0.88      | 0.00             | 0.50    |
+| Logistic Regression (pipeline)   | ~0.90      | ~0.35            | ~0.90   |
 
 ### Entrega 2 — Comparación de modelos
 | Modelo    |  Accuracy   | F1-score   | ROC-AUC |
@@ -161,6 +165,6 @@ También se evaluarán técnicas para:
 - James, G., Witten, D., Hastie, T. y Tibshirani, R. (2021).
   An Introduction to Statistical Learning.
   Springer.
-  
+
 - UCI Machine Learning Repository.
   Bank Marketing Dataset.
