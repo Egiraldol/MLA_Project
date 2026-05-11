@@ -1,0 +1,12 @@
+name: mla-project
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - seaborn
+  - numpy
+  - matplotlib
+  - jupyter
+  - scikit-learn
+  - pandas
