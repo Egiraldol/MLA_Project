@@ -12,3 +12,4 @@ dependencies:
   - pandas
   - lightgbm
   - imbalanced-learn
+  - shap
